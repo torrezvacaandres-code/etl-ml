@@ -1,0 +1,88 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files (keep example.env tracked)
+.env
+.env.*
+!example.env
+!.env.example
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Type checking / tooling caches
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+.cache/
+
+# Logs
+logs/
+*.log
+
+# Jupyter and IPython
+.ipynb_checkpoints/
+profile_default/
+
+# Data / models (local artifacts)
+data/
+models/
+artifacts/
+outputs/
+
+# IDE/editor
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker local overrides
+docker-compose.override.yml
+
+# Terraform (if present)
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# SQLite databases (if generated locally)
+*.sqlite
+*.sqlite3
+
+# Node (if present in subdirs)
+node_modules/
