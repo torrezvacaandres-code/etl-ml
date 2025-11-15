@@ -1,0 +1,6 @@
+pandas
+psycopg2-binary
+scikit-learn
+python-dotenv
+schedule
+gunicorn

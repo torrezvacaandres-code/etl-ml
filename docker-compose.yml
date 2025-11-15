@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  ml-comedor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ml-comedor:latest
+    container_name: ml-comedor
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - DIAS_A_PREDECIR=${DIAS_A_PREDECIR:-7}
+      - RUN_SCHEDULE=${RUN_SCHEDULE:-02:00}
+      - RUN_ONCE=${RUN_ONCE:-false}
+    volumes:
+      - ./:/app
+    networks:
+      - ml-network
+
+  # Si quieres incluir una base de datos local para desarrollo
+  # (descomentar según sea necesario)
+  # 
+  # db:
+  #   image: postgres:14
+  #   container_name: ml-comedor-db
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_PASSWORD=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_DB=postgres
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #     - ./init-db:/docker-entrypoint-initdb.d
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - ml-network
+
+networks:
+  ml-network:
+    driver: bridge
+
+# volumes:
+#   postgres-data:
